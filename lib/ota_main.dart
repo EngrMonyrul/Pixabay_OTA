@@ -1,5 +1,7 @@
 part of 'pixabay_ota.dart';
 
+final di = GetIt.instance;
+
 class OtaMain extends StatelessWidget {
   const OtaMain({
     super.key,
