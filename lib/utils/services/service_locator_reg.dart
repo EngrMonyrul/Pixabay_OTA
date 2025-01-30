@@ -1,7 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:pixabay_ota/network/api_client.dart';
-import 'package:pixabay_ota/pixabay_ota.dart';
-import 'package:pixabay_ota/utils/services/custom_interceptors.dart';
+part of '../../pixabay_ota.dart';
 
 Future<void> register({required String baseUrl}) async {
   di.registerLazySingleton<ApiClient>(
@@ -15,5 +12,9 @@ Future<void> register({required String baseUrl}) async {
           CustomInterceptors(),
         ),
     ),
+  );
+
+  di.registerLazySingleton<LocalStorage>(
+    () => _LocalStorageImpl(),
   );
 }

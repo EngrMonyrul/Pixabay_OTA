@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   get_it: ^8.0.3
+  get_storage: ^2.1.1
   injectable: ^2.5.0
   json_annotation: ^4.9.0
   json_serializable: ^6.9.0

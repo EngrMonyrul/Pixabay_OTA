@@ -20,6 +20,12 @@ class CustomInterceptors extends InterceptorsWrapper {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
+    final data = response.data;
+    if (data is Map) {
+      data.putIfAbsent("statusCode", () => response.statusCode);
+      response.data = data;
+    }
+
     logger.i(
         "Url :: ${response.realUri.path}\nData :: ${jsonEncode(response.data)}");
     return handler.next(response);
